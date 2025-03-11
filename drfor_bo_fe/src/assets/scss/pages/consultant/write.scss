@@ -1,0 +1,197 @@
+.lm-container.consultant-wrap {
+	display: flex;
+	justify-content: space-between;
+	gap: 24px;
+	width: 100%;
+	min-height: 100%;
+	padding: 14px 14px 24px 24px;
+	min-width: 1024px;
+
+	.lm-card-wrap {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.side-box {
+		min-width: 226px;
+		height: max-content;
+		border-radius: 12px;
+		position: sticky;
+		top: 24px;
+	}
+
+	.lm-table {
+		width: 100%;
+		border-top: 1px solid $LM-gray-0;
+
+		tr {
+			border-bottom: 1px solid $LM-gray-4;
+		}
+
+		th {
+			padding: 0 16px;
+			background-color: $LM-gray-6;
+			text-align: left;
+			color: $LM-gray-2;
+			font-size: 14px;
+			line-height: 22.4px;
+			font-weight: 300;
+			min-width: 120px;
+
+			&.w-120 {
+				width: 120px;
+			}
+		}
+
+		td {
+			min-height: 64px;
+			box-sizing: border-box;
+			padding: 12px 16px;
+			width: 444px;
+			vertical-align: middle;
+
+			ul > li {
+				.body4,
+				.title3 {
+					white-space: nowrap;
+				}
+			}
+			.lm-radio-input {
+				margin-right: 8px;
+				display: inline-block;
+				+ label {
+					vertical-align: super;
+				}
+			}
+			#radio2 {
+				margin-left: 24px;
+			}
+			.password-btn {
+				padding: 0 16px;
+				height: 40px;
+				background-color: $LM-gray-5;
+			}
+		}
+	}
+
+	.lm-line {
+		width: 1px;
+		height: 10px;
+		background: $LM-gray-3;
+	}
+
+	// 에디터
+	.lm-editor {
+		width: 100%;
+
+		.se-menu-list > li > button {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.lm-card-top {
+		border-top: 1px solid $LM-gray-0;
+	}
+
+	* {
+		line-height: 1.6;
+	}
+
+	.lm-card-gray {
+		background-color: $LM-gray-6;
+		padding: 40px 160px;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.recommend-prd {
+		.lm-flex.justify-between {
+			margin-bottom: 7px;
+		}
+	}
+
+	.recommend-prd-empty {
+		> div {
+			padding: 40px 160px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.line-dashed {
+		width: 100%;
+		border-top: 1px dashed $LM-gray-4;
+	}
+
+	.lm-toggle-wrap {
+		position: relative;
+		width: 34px;
+		.lm-toggle {
+			position: absolute;
+			top: 50%; // 부모 기준으로 중앙 정렬
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 34px; /* 토글 버튼의 너비 */
+			height: 20px; /* 토글 버튼의 높이 */
+			border-radius: 20px; /* 둥근 버튼 */
+			background-color: #cbd5e1; /* 기본 배경색 */
+			cursor: pointer;
+			transition: all 0.3s ease;
+			/* 토글 슬라이더 */
+			.toggle-slider {
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background-color: #fff;
+				transition: all 0.3s ease;
+			}
+			&.active {
+				background-color: #2e3f57; /* 활성 상태 배경색 */
+				.toggle-slider {
+					transform: translateX(14px); /* 오른쪽으로 이동 */
+				}
+			}
+		}
+	}
+
+	.lm-img-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 192px;
+		height: 192px;
+		background: rgba(0, 0, 0, 0.03);
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.mb-24 {
+		margin-bottom: 24px;
+	}
+
+	.mt-24 {
+		margin-top: 24px;
+	}
+
+	.my-24 {
+		margin: 24px 0;
+	}
+
+	.lm-border-top {
+		border-top: 1px solid $LM-gray-4;
+	}
+}

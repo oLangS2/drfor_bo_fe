@@ -1,0 +1,141 @@
+$LM-icon-name: (
+	"all-menu-2",
+	"all-menu",
+	"arrow-down",
+	"arrow-first",
+	"arrow-last",
+	"arrow-next",
+	"arrow-prev",
+	"arrow-up",
+	"calendar",
+	"camera",
+	"card-hand",
+	"card",
+	"cart",
+	"check",
+	"check-2",
+	"clip",
+	"coupon",
+	"date",
+	"doc",
+	"el",
+	"feel",
+	"gear",
+	"hand-best-fill",
+	"hand-best",
+	"hart-fill",
+	"hart",
+	"i-2",
+	"i",
+	"link",
+	"lock-open",
+	"lock",
+	"minus",
+	"money-2",
+	"money-hand",
+	"money-paper",
+	"money",
+	"note",
+	"notebook",
+	"pay",
+	"people",
+	"percent",
+	"phone",
+	"pin-fill",
+	"pin",
+	"play",
+	"plus",
+	"power",
+	"print",
+	"qr",
+	"refresh",
+	"repeat",
+	"search",
+	"smile",
+	"speaker-2",
+	"speaker",
+	"speech",
+	"star",
+	"tag",
+	"upload-2",
+	"upload",
+	"x-cicle",
+	"x",
+	"create-content",
+	"manage-content",
+	"consultant",
+	"setting",
+	// 추가
+	"close",
+	"close-thin",
+	"file-delete",
+	"close-gray",
+	"logout",
+	"list-filter-arrow"
+);
+
+.lm-icon {
+	@each $item in $LM-icon-name {
+		&-#{$item} {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background-color: black;
+			vertical-align: middle;
+
+			// 원형 아이콘 처리
+			$cicle-items: "check", "feel", "i-2", "file-delete", "list-filter-arrow";
+			@if index($cicle-items, $item) {
+				border-radius: 100%;
+				background-image: url(@/assets/img/icon/icon-#{$item}.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: transparent;
+			} @else {
+				mask: url(@/assets/img/icon/icon-#{$item}.svg) no-repeat center;
+				mask-size: cover;
+			}
+
+			// 색상 설정
+			@each $color in $LM-point-color {
+				$i: index($LM-point-color, $color);
+				&.color-#{$i} {
+					background-color: $color;
+				}
+			}
+			&.color-white {
+				background-color: white;
+			}
+
+			// 크기 조절 클래스
+			&.size-20 {
+				width: 20px;
+				height: 20px;
+			}
+			&.size-8 {
+				width: 8px;
+				height: 18px;
+			}
+		}
+	}
+}
+.lm-icon-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	border-radius: $LM-radius-1;
+	background-color: #444;
+	box-shadow: $LM-shodow-2;
+	@each $color in $LM-point-color {
+		$i: index($LM-point-color, $color);
+		&.color-#{$i} {
+			background-color: $color;
+		}
+	}
+	[class^="lm-icon"] {
+		width: 30px;
+		height: 30px;
+	}
+}

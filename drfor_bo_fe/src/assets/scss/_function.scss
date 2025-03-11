@@ -1,0 +1,91 @@
+@charset "UTF-8";
+// write : gray
+// since : 2024-05-18/
+
+// @import url(../font/SpoqaHanSans/SpoqaHanSans.css);
+@import url(../font/NotoSansKR/NotoSansKR.css);
+@import url(../font/Montserrat/Montserrat.css);
+
+// default font family
+$LM-font-family: "Noto Sans KR", Malgun Gothic, "맑은 고딕", dotum, "돋움", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+$LM-font-family-num-or-eng: "Montserrat", Malgun Gothic, "맑은 고딕", dotum, "돋움", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+//// default font family
+
+// font size
+$LM-default-font-size: 14px;
+//// font size
+
+// default font color
+$LM-default-font-color: #2e3f57;
+$LM-default-font-color-link: #3399cc;
+$LM-font-color-black: #151515;
+$LM-font-color-white: #fff;
+$LM-default-font-color-used: #3fa3ff;
+$LM-default-font-color-un-used: #8596ae;
+$LM-default-font-color-form: #64748b;
+//// default font color
+
+// point color
+$LM-point-color: (#3fa3ff, #06c755, #ffb624, #e62a10, #8596ae, #2e3f57, #fff, #e2e8f0, #f1f3f4, #4b586b, #f8f9fb, #b1b9cb);
+//// point color
+
+// radius
+$LM-radius-1: 10px;
+//// radius
+
+// shadow
+$LM-shodow-1: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$LM-shodow-2: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(64, 64, 64, 0.4);
+//// shadow
+
+// width
+$LM-w-max: 1224px;
+$LM-w-full: 100%;
+//// width
+
+// gap
+$LM-space-1: 24px;
+$LM-space-2: 32px;
+// gap
+
+// mixin style
+@mixin box-style($padding: 32px, $radius: 20px, $backgroundColor: "#fff") {
+	padding: $padding;
+	border-radius: $LM-radius-1;
+	background-color: $LM-white-0;
+	box-shadow: $LM-shodow-1;
+}
+@mixin flex-box($getSpace: 20, $getCount: 5) {
+	$spaceWidth1: calc(100 / $getCount);
+	$spaceWidth2: $spaceWidth1 * 1%;
+	$minusPx: calc(($getSpace * ($getCount - 1)) / $getCount);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: #{$getSpace}px;
+	> div {
+		width: calc($spaceWidth2 - #{$minusPx}px);
+	}
+}
+//// mixin style
+
+// LEADERMINE gray color
+$LM-white-0: #fff;
+$LM-gray-0: #2e3f57;
+$LM-gray-1: #4b586b;
+$LM-gray-2: #64748b;
+$LM-gray-3: #b1b9cb;
+$LM-gray-4: #e2e8f0;
+$LM-gray-5: #f1f3f4;
+$LM-gray-6: #f8f9fb;
+// !LEADERMINE gray color
+
+//LEADERMINE form
+$LM-default-color: #e2e8f0;
+$LM-hover-color: #b1b9cb;
+$LM-active-color: #b1b9cb;
+$LM-disabled-color-1: #e2e8f0;
+$LM-disabled-color-2: #f1f3f4;
+$LM-error-color: #e62a10;
+$LM-placeholder-color: #b1b9cb;
+// !LEADERMINE form

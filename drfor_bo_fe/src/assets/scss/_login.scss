@@ -1,0 +1,119 @@
+// 로그인
+.login-wrap {
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	.lm-card {
+		margin: auto;
+	}
+
+	.flex-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.intro-box {
+		margin-bottom: 40px;
+		text-align: center;
+
+		> .logo {
+			// margin-bottom: 24px;
+			img {
+				width: 180px;
+			}
+		}
+
+		p {
+			color: #64748b;
+			font-weight: 300;
+		}
+	}
+
+	.form-box {
+		display: flex;
+		flex-direction: column;
+
+		.lm-input-wrap {
+			position: relative;
+
+			&:first-child {
+				margin-bottom: 12px;
+				&::after {
+					content: "";
+					width: 16px;
+					height: 16px;
+					background: url(@/assets/img/icon/icon-user.png) no-repeat center center/contain;
+					position: absolute;
+					top: 50%;
+					left: 16px;
+					transform: translate(0, -50%);
+				}
+			}
+
+			&:nth-child(2) {
+				&::after {
+					content: "";
+					width: 16px;
+					height: 16px;
+					background: url(@/assets/img/icon/icon-lock.png) no-repeat center center/contain;
+					position: absolute;
+					top: 50%;
+					left: 16px;
+					transform: translate(0, -50%);
+				}
+			}
+
+			> input {
+				max-width: 364px;
+				padding: 0 16px 0 40px;
+			}
+		}
+
+		.lm-button {
+			width: 364px;
+		}
+
+		.lm-button:first-of-type {
+			margin-top: 24px;
+			margin-bottom: 12px;
+		}
+
+		.error-box {
+			max-width: 364px;
+			margin-top: 10px;
+			color: rgb(255, 107, 107);
+		}
+	}
+
+	.link-box {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		a {
+			color: #4b586b;
+			text-align: center;
+		}
+
+		> div {
+			width: 1px;
+			height: 10px;
+			background-color: #e2e8f0;
+		}
+	}
+}
+
+// 계정찾기
+.find-account-wrap {
+	padding: 60px 40px;
+	.lm-button-wrap {
+		button {
+			height: 40px;
+			padding: 0 27px;
+			font-size: 14px;
+		}
+	}
+}

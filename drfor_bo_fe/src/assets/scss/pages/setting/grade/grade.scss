@@ -1,0 +1,22 @@
+.lmLavelListWrap {
+	.lm-panel-title {
+		.lm-button {
+			font-size: 14px;
+			font-weight: 600;
+			height: 40px;
+			padding: 0 16px;
+			gap: 4px;
+			border-radius: 99px;
+		}
+	}
+	.lm-board-basic {
+		.status-button {
+			button {
+				margin-right: 6px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

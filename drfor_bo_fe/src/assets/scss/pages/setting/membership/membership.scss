@@ -1,0 +1,35 @@
+// 유로멤버쉽 리스트
+.lmMembershipListWrap {
+	.lm-board-basic {
+		.status-button {
+			button {
+				margin-right: 6px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	tbody {
+		tr {
+			cursor: pointer;
+			user-select: none;
+		}
+	}
+}
+// 유로멤버쉽 등록/ 수정
+.membership-wrap {
+	.lm-checkbox {
+		label {
+			width: 50px;
+		}
+		.lm-input {
+			flex: 1;
+		}
+		.point-input {
+			flex: none;
+			text-align: right;
+			width: 200px;
+		}
+	}
+}

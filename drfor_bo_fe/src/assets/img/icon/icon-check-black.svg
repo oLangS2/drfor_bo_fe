@@ -1,0 +1,10 @@
+<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon / 12px / Outlined / check">
+<mask id="mask0_283_21634" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="8" height="7">
+<path id="Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.83595 1.53358C8.05708 1.75907 8.05382 2.1214 7.82867 2.34287L3.06482 7.02875L0.171017 4.18232C-0.0541318 3.96085 -0.057391 3.59852 0.163738 3.37303C0.384866 3.14754 0.746646 3.14428 0.971795 3.36574L3.06482 5.4245L7.02789 1.52629C7.25304 1.30483 7.61482 1.30809 7.83595 1.53358Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_283_21634)">
+<rect id="Fill" width="7.99969" height="7.99969" fill="#2E3F57"/>
+</g>
+</g>
+</svg>

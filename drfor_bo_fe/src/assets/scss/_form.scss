@@ -1,0 +1,501 @@
+.lm-check-radio-box-wrap {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.lm-check-box {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	.change-d {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border-radius: 2px;
+		border: 1px solid nth($LM-point-color, 8);
+		background-color: #fff;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			mask: url(@/assets/img/icon/icon-check-2.svg) no-repeat center;
+			mask-size: 12px;
+			background-color: #e6e6e6;
+		}
+		&:focus,
+		&:hover {
+			border-color: nth($LM-point-color, 12);
+		}
+	}
+	input {
+		display: none;
+		&:checked + .change-d {
+			border-color: nth($LM-point-color, 6);
+			background-color: nth($LM-point-color, 6);
+			&::after {
+				background-color: #fff;
+			}
+		}
+		&:disabled + .change-d {
+			border-color: #e6e6e6;
+			background-color: #f7f7f7;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	.text {
+		font-size: 14px;
+	}
+	&.s-l {
+		gap: 12px;
+		.change-d {
+			width: 28px;
+			height: 28px;
+			border-radius: 4px;
+			&::after {
+				mask-size: 16px;
+			}
+		}
+		.text {
+			font-size: 18px;
+		}
+	}
+}
+
+.lm-radio-box {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	.change-d {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		border: 1px solid nth($LM-point-color, 12);
+		background-color: #fff;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background-color: #b3b3b3;
+			transform: translate(-50%, -50%);
+		}
+		&:focus,
+		&:hover {
+			border-color: #666;
+		}
+	}
+	input {
+		display: none;
+		&:checked + .change-d {
+			border-color: nth($LM-point-color, 6);
+			background-color: nth($LM-point-color, 6);
+			&::after {
+				background-color: #fff;
+			}
+		}
+		&:disabled + .change-d {
+			border-color: nth($LM-point-color, 12);
+			background-color: #f7f7f7;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	.text {
+		font-size: 16px;
+	}
+	&.s-l {
+		gap: 12px;
+		.change-d {
+			width: 28px;
+			height: 28px;
+			&::after {
+				width: 12px;
+				height: 12px;
+			}
+		}
+		.text {
+			font-size: 18px;
+		}
+	}
+}
+
+.lm-count-wrap {
+	display: inline-flex;
+	height: 48px;
+	border: 1px solid #e6e6e6;
+	input {
+		width: 60px;
+		border: none;
+		border-right: 1px solid #e6e6e6;
+		border-left: 1px solid #e6e6e6;
+		text-align: center;
+	}
+	button {
+		width: 48px;
+		border: none;
+		background-color: transparent;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 20px;
+		&.minus {
+			background-image: url(@/assets/img/icon/icon-minus.svg);
+		}
+		&.plus {
+			background-image: url(@/assets/img/icon/icon-plus.svg);
+		}
+	}
+	&.s-s {
+		height: 32px;
+		input {
+			width: 44px;
+			font-size: 12px;
+		}
+		button {
+			width: 32px;
+			background-size: 16px;
+		}
+	}
+}
+.ex-form-set {
+	line-height: 1;
+	padding: 14px 16px;
+	border-radius: 3px;
+	border: 1px solid $LM-default-color;
+	font-size: 14px;
+	font-weight: 400;
+	color: $LM-default-font-color;
+	outline: 0;
+	&::placeholder {
+		color: $LM-placeholder-color;
+		font-weight: 300;
+	}
+	&:hover {
+		border-color: $LM-hover-color;
+	}
+	&:focus {
+		border-color: $LM-active-color;
+	}
+	&:disabled {
+		border-color: $LM-disabled-color-1;
+		background-color: $LM-disabled-color-2;
+		color: $LM-default-font-color;
+	}
+	&.s-s {
+		padding: 7px 12px;
+		font-size: 14px;
+	}
+	&.s-l {
+		padding: 20px 24px;
+		font-size: 18px;
+	}
+}
+.lm-input {
+	@extend .ex-form-set;
+	height: 40px;
+	padding: 0 16px;
+	font-size: 14px;
+	width: 100%;
+	padding: 14px 16px;
+	border-radius: 3px;
+	border: 1px solid nth($LM-point-color, 8);
+	background-color: #fff;
+	outline: 0;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	&[type="number"] {
+		-moz-appearance: textfield;
+	}
+
+	&.w-full {
+		width: 100%;
+	}
+	&.s-s {
+		padding: 7px 12px;
+		font-size: 14px;
+	}
+	&.s-l {
+		padding: 21px 24px;
+		font-size: 18px;
+	}
+	&:focus,
+	&:hover {
+		border-color: nth($LM-point-color, 12);
+	}
+	&::placeholder {
+		color: #b3b3b3;
+	}
+	&.success {
+		border-color: $LM-active-color;
+	}
+	&.error {
+		border-color: $LM-error-color;
+	}
+	&:disabled {
+		border: 1px solid #e6e6e6;
+		background-color: #f7f7f7;
+		color: #b3b3b3;
+	}
+	@mixin backgroundArrow($color: "000") {
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.8839 15.5303C12.3957 16.0185 11.6043 16.0185 11.1161 15.5303L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z' fill='%23#{$color}'/%3E%3C/svg%3E%0A");
+	}
+	@at-root select#{&} {
+		appearance: none;
+		@include backgroundArrow();
+		padding-right: 60px;
+		background-repeat: no-repeat;
+		background-position: center right 16px;
+		&.s-s {
+			padding-right: 40px;
+			background-position: center right 12px;
+			background-size: 16px;
+		}
+		&.s-l {
+			padding-right: 80px;
+			background-position: center right 24px;
+		}
+		&:disabled {
+			@include backgroundArrow("E6E6E6");
+		}
+	}
+	@at-root textarea#{&} {
+		resize: none;
+		padding: 16px;
+		min-height: 200px;
+		&.s-l {
+			padding: 24px;
+		}
+	}
+}
+.lm-textarea {
+	@extend .ex-form-set;
+	line-height: 1.5;
+	resize: none;
+	padding: 16px;
+	width: 100%;
+	min-height: 96px;
+}
+.lm-select {
+	height: 40px;
+	// set
+	@mixin arrow-color($val) {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.8839 15.5303C12.3957 16.0185 11.6043 16.0185 11.1161 15.5303L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z' fill='%23#{$val}'/%3E%3C/svg%3E");
+	}
+	//// set
+	@extend .ex-form-set;
+	padding: 0 48px 0 16px;
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+	@include arrow-color("000000");
+	&:disabled {
+		@include arrow-color("d1d1d1");
+	}
+	&.s-s {
+		padding: 8px 34px 8px 12px;
+		background-position: right 12px center;
+		background-size: 16px;
+	}
+	&.s-l {
+		padding: 21px 56px 22px 24px;
+		background-position: right 24px center;
+	}
+	&:focus {
+		border-color: $LM-active-color;
+	}
+}
+.lm-form-box {
+	display: flex;
+	gap: 6px;
+	.m-line {
+		display: flex;
+		align-items: center;
+	}
+}
+.lm-date-input {
+	height: 40px;
+	border: 1px solid #e2e8f0;
+	padding: 0 16px;
+	border-radius: 3px;
+	position: relative;
+	background: url("/src/assets/img/icon-calendar.svg") no-repeat right 10px center;
+	background-color: #fff;
+
+	&::-webkit-calendar-picker-indicator {
+		position: absolute; // 이를 설정하기 위해 사전에 relative를 설정한 것이다.
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent; // 배경은 투명하게,
+		color: transparent; // 글자도 투명하게! 이 두 설정을 통해 캘린더 아이콘을 사라지게 만든다.
+		cursor: pointer;
+	}
+	&::-webkit-inner-spin-button {
+		display: none;
+		appearance: none;
+	}
+	&:disabled {
+		border-color: #d1d1d1;
+		background-color: #e7e7e7;
+		color: #a2a2a2;
+	}
+}
+
+.lm-radio-input {
+	-webkit-appearance: none; // 웹킷 브라우저에서 기본 스타일 제거
+	-moz-appearance: none; // 모질라 브라우저에서 기본 스타일 제거
+	appearance: none; // 기본 브라우저에서 기본 스타일 제거
+	width: 20px;
+	height: 20px;
+	border: 5px solid #fff;
+	border-radius: 99px;
+	box-shadow: 0 0 0 1.6px #b1b9cb;
+	background-color: #b1b9cb;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0 0 0 1.6px #64748b;
+	}
+	&:checked {
+		background-color: #fff;
+		border-radius: 99px;
+		border: 5px solid nth($LM-point-color, 6);
+		box-shadow: 0 0 0 1.6px nth($LM-point-color, 6);
+		// box-shadow: none;
+	}
+}
+
+.lm-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+
+	&:hover {
+		> input {
+			border-color: nth($LM-point-color, 6);
+		}
+	}
+
+	> input:first-child {
+		appearance: none;
+		border: 1.5px solid #b1b9cb;
+		border-radius: 3px;
+		width: 20px;
+		min-width: 20px;
+		height: 20px;
+		background-image: url("/src/assets/img/icon/icon-checkbox-gray.svg");
+		background-position: 50%;
+		background-repeat: no-repeat;
+		cursor: pointer;
+
+		&:hover {
+			border: 1px solid $LM-default-font-color;
+		}
+
+		&:checked {
+			border-color: transparent;
+			background-image: url("/src/assets/img/icon/icon-check-white.svg");
+			background-position: 50%;
+			background-repeat: no-repeat;
+			border-radius: 2px;
+			background-color: rgba(46, 63, 87, 1);
+		}
+
+		&:disabled {
+			border-color: #d1d1d1;
+			background-color: #e7e7e7;
+			color: #a2a2a2;
+			& + label {
+				color: #a2a2a2;
+			}
+		}
+	}
+
+	> label {
+		color: rgba(46, 63, 87, 1);
+	}
+}
+
+// custom
+.lm-input-box-wrap,
+.lm-check-radio-box-wrap {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	border-bottom: 1px solid nth($LM-point-color, 8);
+	&-title {
+		color: $LM-default-font-color-form;
+		padding: 21px 16px;
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 160%;
+		letter-spacing: -0.28px;
+		width: 130px;
+		background-color: nth($LM-point-color, 11);
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		span {
+			width: 4px;
+			height: 4px;
+		}
+	}
+}
+
+// 파일첨부 custom
+.lm-input-file-box {
+	display: flex;
+	gap: 10px;
+	width: 500px;
+	position: relative;
+
+	input[type="file"] {
+		display: none;
+	}
+
+	input[type="text"] {
+		flex: 1;
+		padding: 0 16px;
+		border: 1px solid $LM-gray-4;
+		background-color: $LM-gray-5;
+		outline: none;
+	}
+	::placeholder {
+		color: $LM-gray-0;
+		font-size: 14px;
+	}
+	.lm-icon-file-delete {
+		vertical-align: middle;
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+.lm-file-button-up {
+	flex-shrink: 0;
+	width: 83px;
+	height: 40px;
+	border: 1px solid $LM-gray-4;
+	color: $LM-gray-0;
+	background-color: #fff;
+	cursor: pointer;
+	font-weight: 600;
+	border-radius: 3px;
+}

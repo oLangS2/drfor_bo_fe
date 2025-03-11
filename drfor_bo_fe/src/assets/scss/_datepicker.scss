@@ -1,0 +1,52 @@
+// custom
+.date-range-picker {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+
+	font-family: $LM-font-family-num-or-eng;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%; /* 22.4px */
+	letter-spacing: -0.28px;
+
+	.date-inputs {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		&-box {
+			position: relative;
+		}
+		input {
+			// width: 132px; //인풋 두개일 때
+			width: 204px; // 인풋 하나일 때
+			height: 40px;
+			padding: 0 16px;
+			position: relative;
+
+			font-family: $LM-font-family-num-or-eng;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 160%; /* 22.4px */
+			letter-spacing: -0.28px;
+		}
+		span.lm-icon-date {
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 16px;
+			height: 16px;
+
+			font-family: $LM-font-family-num-or-eng;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 160%;
+			letter-spacing: -0.28px;
+			cursor: pointer;
+		}
+	}
+}

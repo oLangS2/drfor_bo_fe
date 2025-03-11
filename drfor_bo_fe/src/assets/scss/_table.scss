@@ -1,0 +1,321 @@
+.lm-paging {
+	position: sticky;
+	bottom: 8px;
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+	margin-top: 24px;
+	padding: 18px 24px;
+	border-radius: 20px;
+	border: 1px solid #e2e8f0;
+	background: #fff;
+	box-shadow: 0px 15px 32px 0px rgba(112, 144, 176, 0.1);
+	// 공통 LmPaging 에서 테두리 스타일 제거한 스타일
+	&.border-none {
+		border-radius: 0;
+		border: none;
+		box-shadow: none;
+	}
+	button {
+		width: 32px;
+		height: 32px;
+		border: none;
+		background-color: #fff;
+		font-weight: 400;
+	}
+	.arrow {
+		background-color: #666;
+		&.first {
+			mask: url(@/assets/img/icon/icon-arrow-first.svg) no-repeat center;
+		}
+		&.prev {
+			mask: url(@/assets/img/icon/icon-arrow-prev.svg) no-repeat center;
+		}
+		&.next {
+			mask: url(@/assets/img/icon/icon-arrow-next.svg) no-repeat center;
+		}
+		&.last {
+			mask: url(@/assets/img/icon/icon-arrow-last.svg) no-repeat center;
+		}
+		&:disabled {
+			background-color: #e6e6e6;
+		}
+	}
+	.num {
+		display: flex;
+		justify-content: center;
+		gap: 6px;
+		padding: 0 12px;
+		button {
+			border-radius: 50%;
+			&.active {
+				background-color: $LM-gray-0;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.lm-board-basic {
+	thead {
+		height: 46px;
+		th {
+			padding: 12px 16px;
+			font-size: 13px;
+			font-weight: 300;
+			color: #64748b;
+		}
+		tr {
+			&:first-child {
+				th {
+					background-color: #f8f9fb;
+					&:first-child {
+						border-top-left-radius: 12px;
+						border-bottom-left-radius: 12px;
+					}
+					&:last-child {
+						border-top-right-radius: 12px;
+						border-bottom-right-radius: 12px;
+					}
+				}
+			}
+			&:last-child {
+				th {
+					padding: 0;
+					height: 12px;
+				}
+			}
+			& th.no {
+				width: 80px;
+				font-size: 14px;
+				font-family: "Noto Sans";
+				font-weight: 300;
+			}
+			& th.scalpType {
+				width: 116px;
+			}
+			& th.consultTitle {
+				width: 340px;
+			}
+			& th.customerId {
+				width: 196px;
+			}
+			& th.memberIdName {
+				width: 196px;
+			}
+			& th.createAt {
+				width: 196px;
+			}
+			& th.answered {
+				width: 116px;
+			}
+			& th.answeredButton {
+				width: 116px;
+			}
+			& th.status {
+				width: 132px;
+			}
+		}
+	}
+	tbody {
+		border-radius: 20px;
+		box-shadow: 0px 8px 16px 0px rgba(112, 144, 176, 0.1);
+
+		td {
+			padding: 12px 16px;
+			border-top: 1px solid #f1f3f4;
+			font-size: 14px;
+			text-align: center;
+			color: #2e3f57;
+			&.subject {
+				// width: 340px;
+				text-align: left;
+				font-weight: 600;
+				cursor: pointer;
+				text-decoration: underline;
+				text-underline-position: under;
+				span {
+					padding-bottom: 1px;
+					border-bottom: 1px solid #2e3f57;
+
+					display: inline-block;
+					max-width: 92px;
+					word-wrap: break-word; /* 긴 단어를 줄바꿈 */
+					word-break: break-word; /* 줄바꿈 규칙 */
+					white-space: normal;
+
+					border-bottom: none;
+					padding-bottom: 0;
+				}
+			}
+			&.link-text {
+				font-weight: 600;
+				cursor: pointer;
+				text-decoration: underline;
+				text-underline-position: under;
+			}
+			&.link-text-num-or-eng {
+				font-family: $LM-font-family-num-or-eng;
+				font-weight: 600;
+				cursor: pointer;
+				text-decoration: underline;
+				text-underline-position: under;
+			}
+			// 답변여부 조건부 렌더링
+			&.answered-active,
+			&.status-active {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: nth($LM-point-color, 1);
+				font-size: 12px;
+				font-weight: 400;
+				height: 56.5px;
+				span {
+					border-radius: 100px !important;
+					width: 63px;
+					min-width: 48px;
+					padding: 4px 8px;
+					background-color: rgba(nth($LM-point-color, 1), 0.1);
+				}
+			}
+			&.answered-inactive,
+			&.status-inactive {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $LM-default-font-color-un-used;
+				font-size: 12px;
+				font-weight: 400;
+				height: 56.5px;
+				span {
+					border-radius: 100px !important;
+					width: 63px;
+					min-width: 48px;
+					padding: 4px 8px;
+					background-color: rgba(nth($LM-point-color, 5), 0.1);
+				}
+			}
+			// 관리 조건부렌더링
+			&.answered-button,
+			&.status-button {
+				button {
+					min-width: 48px;
+					height: 32px;
+					border-radius: 2px;
+					padding: 0px 12px;
+					font-size: 13px;
+					font-style: normal;
+					font-weight: 300;
+					&.answered-button-inactive,
+					&.status-button-inactive {
+						color: $LM-default-font-color;
+						background-color: nth($LM-point-color, 7);
+						border: 1px solid nth($LM-point-color, 8);
+					}
+					&.answered-button-active,
+					&.status-button-active {
+						color: $LM-font-color-white;
+						background-color: nth($LM-point-color, 6);
+						border: 1px solid transparent;
+					}
+				}
+			}
+			&.status-button {
+				button {
+					width: 62px;
+				}
+			}
+		}
+
+		tr {
+			&:hover {
+				background-color: #f7faff;
+			}
+			&:first-child {
+				td {
+					border: none;
+					&:first-child {
+						border-top-left-radius: 20px;
+					}
+					&:last-child {
+						border-top-right-radius: 20px;
+					}
+				}
+			}
+			&:last-child {
+				td {
+					&:first-child {
+						border-bottom-left-radius: 20px;
+					}
+					&:last-child {
+						border-bottom-right-radius: 20px;
+					}
+				}
+			}
+			& td.num-or-eng {
+				text-align: center;
+				font-family: $LM-font-family-num-or-eng;
+				font-weight: 400;
+				letter-spacing: -0.28px;
+			}
+		}
+	}
+}
+
+.lm-board-faq {
+	.lm-board-item {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 5px 10px;
+		border-bottom: 1px solid #ddd;
+		cursor: pointer;
+		&:first-child {
+			border-top: 1px solid #ddd;
+		}
+		&:nth-child(even) {
+			background-color: #f4f4f4;
+		}
+		&:hover {
+			background-color: #eee;
+		}
+		&.active {
+			background-color: #444;
+			color: #fff;
+		}
+		.contents {
+			width: 100%;
+			padding: 10px;
+			background-color: #fff;
+			color: #444;
+		}
+	}
+}
+
+// custom
+// 필터 아이콘 위치 조정
+.lm-icon-list-filter-arrow {
+	margin-left: 6px;
+	margin-bottom: 2px;
+	cursor: pointer;
+}
+
+// 상담사목록
+.consultTableBoardWrap {
+	thead {
+		tr {
+			& th.memberName {
+				width: 350px;
+			}
+			& th.memberId {
+				width: 350px;
+			}
+			& th.createAt {
+				width: 680px;
+			}
+		}
+	}
+}
